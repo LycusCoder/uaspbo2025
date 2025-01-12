@@ -4,7 +4,7 @@
 ### Pemrograman Berorientasi Objek
 
 Disusun untuk memenuhi UAS mata kuliah Pemrograman Berorientasi Objek  
-Dosen Pengampu: Rifki Dwi K, S.KOM
+**Dosen Pengampu**: Rifki Dwi K, S.KOM
 
 ### Anggota Kelompok
 - Bara Abiyyi Muslimin: 23215051
@@ -16,19 +16,47 @@ Dosen Pengampu: Rifki Dwi K, S.KOM
 - Muhamad Affif: 24225046
 
 ## Deskripsi Proyek
-Pada proyek ini, kami telah mengembangkan sistem pengelolaan data universitas berbasis Java yang dirancang untuk mengelola data akademik. Sistem ini mencakup tiga peran utama:
+Proyek ini adalah sistem pengelolaan data universitas berbasis Java yang dirancang untuk mengelola data akademik. Sistem ini mencakup tiga peran utama:
 
 1. **BAUK (Bagian Administrasi Umum dan Keuangan)**:
-   - Bertugas mengatur data mahasiswa dan dosen, termasuk menambahkan atau menghapus data.
+   - Mengatur data mahasiswa dan dosen.
 
 2. **Dosen**:
-   - Memiliki kemampuan untuk mengatur nilai mahasiswa.
+   - Mengatur nilai mahasiswa.
 
 3. **Mahasiswa**:
-   - Dapat melihat nilai mereka, termasuk total dan rata-rata nilai yang diperoleh.
+   - Melihat nilai dan rata-rata mereka.
 
-Data yang mencakup informasi dosen, mahasiswa, dan nilai disimpan dalam sebuah file teks bernama `universitas.txt`, sehingga data tetap tersimpan meskipun program ditutup.
+Data disimpan dalam file teks `universitas.txt` untuk memastikan data tetap tersimpan meskipun program ditutup. Proyek ini menerapkan prinsip Object-Oriented Programming (OOP).
 
-Proyek ini menerapkan prinsip Object-Oriented Programming (OOP), dengan kelas `Person` sebagai abstraksi dasar. Dua subclass, yaitu `Dosen` dan `Mahasiswa`, digunakan untuk menangani atribut dan fungsi yang spesifik sesuai dengan kebutuhan masing-masing peran.
+## Contoh Kode
+Berikut adalah contoh fungsi utama yang menjalankan aplikasi:
 
+```java
+public static void main(String[] args) {
+    loadData();
+    Scanner scanner = new Scanner(System.in);
+    while (true) {
+        System.out.println("=== SELAMAT DATANG DI APLIKASI UNIVERSITAS ===");
+        System.out.println("Pilih peran:");
+        System.out.println("1. Bauk");
+        System.out.println("2. Dosen");
+        System.out.println("3. Mahasiswa");
+        System.out.println("4. Keluar");
+        System.out.print("Masukkan pilihan: ");
+        
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1: menuBauk(scanner); break;
+            case 2: menuDosen(scanner); break;
+            case 3: menuMahasiswa(scanner); break;
+            case 4: saveData(); return;
+            default: System.out.println("Pilihan tidak valid.");
+        }
+    }
+}
 
+## Lisensi
+Proyek ini dilisensikan di bawah [MIT License](https://opensource.org/licenses/MIT). Anda bebas untuk menggunakan, menyalin, dan memodifikasi kode ini sesuai kebutuhan Anda, dengan menyertakan salinan lisensi ini dalam distribusi Anda.
+
+Terima kasih telah melihat proyek ini!
